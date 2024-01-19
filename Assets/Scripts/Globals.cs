@@ -36,19 +36,22 @@ public class Globals: MonoBehaviour
         if (tag == "Enemy")
         {
             currentEnemies--;
-            instance.StartCoroutine(ChangeScene(levels[currLevel + 1]));
-            currLevel++; 
+
+            if (currentEnemies == 0) {
+                currLevel = (currLevel + 1) % levels.Count;
+                instance.StartCoroutine(LoadSceneAsync(levels[currLevel], 2));
+            }
         }
 
         if (tag == "Player")
         {
-            instance.StartCoroutine(ChangeScene(levels[currLevel]));
+            instance.StartCoroutine(LoadSceneAsync(levels[currLevel], 2));
         }
     }
 
-    private static IEnumerator ChangeScene(string scene)
+    private static IEnumerator LoadSceneAsync(string scene, float delay)
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(delay);
         LoadScene(scene);
     }
 
