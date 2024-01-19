@@ -23,4 +23,10 @@ public static class Globals
             currLevel++;
         }
     }
+
+    // Load the given scene and reset the appropriate static vars
+    public static void LoadScene(string sceneName) {
+        // Reset any appropriate static variables if needed
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 }
