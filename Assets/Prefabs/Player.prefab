@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightProjectile: {fileID: 8234875901813114982, guid: 07ea00d4dd0c723489ce052b05f33ff5, type: 3}
-  lightSpeed: 50
+  lightSpeed: 20

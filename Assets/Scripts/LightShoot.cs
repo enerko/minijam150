@@ -15,12 +15,12 @@ public class LightShoot : MonoBehaviour
         {
             Vector3 playerPos = transform.position;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
             Vector3 direction = (mousePos - playerPos).normalized;
 
-            Debug.Log(mousePos);
-            Debug.Log(playerPos);
             GameObject newLight = Instantiate(lightProjectile, playerPos, Quaternion.identity);
             newLight.GetComponent<Rigidbody2D>().velocity = direction * lightSpeed;
+            Debug.Log(newLight.GetComponent<Rigidbody2D>().velocity.magnitude);
         }
     }
 }
