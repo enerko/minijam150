@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49ff64e6423069478f5f0183f0883c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: Mirror
