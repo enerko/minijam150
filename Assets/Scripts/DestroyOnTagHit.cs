@@ -9,8 +9,13 @@ public class DestroyOnTagHit : MonoBehaviour
     {
         if (collision.gameObject.tag == target)
         {
+            // if enemy is destroyed...
+            if (tag == "Enemy") {
+                Globals.currentEnemies--;
+                Globals.CheckWin();
+            }
+
             Destroy(gameObject);
-            Globals.CheckWin();
         }
     }
 }
