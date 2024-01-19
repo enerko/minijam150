@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Click to shoot a light projectile towards mouse
 public class LightShoot : MonoBehaviour
 {
     public GameObject lightProjectile;  // projectile to shoot
