@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6549514584937159829}
   - component: {fileID: 5635147437460452102}
   - component: {fileID: 8720989529836822775}
+  - component: {fileID: 6040473081812614033}
   m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
@@ -162,3 +163,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeSpan: 10
+--- !u!114 &6040473081812614033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8234875901813114982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49ff64e6423069478f5f0183f0883c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
