@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerInfo.UpdateLastCheckpoint(this);
+            Globals.UpdateLastCheckpoint(this);
         }
     }
 }

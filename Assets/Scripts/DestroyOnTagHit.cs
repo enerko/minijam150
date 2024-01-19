@@ -10,7 +10,7 @@ public class DestroyOnTagHit : MonoBehaviour
         if (collision.gameObject.tag == target)
         {
             Destroy(gameObject);
-            PlayerInfo.CheckWin();
+            Globals.CheckWin();
         }
     }
 }
