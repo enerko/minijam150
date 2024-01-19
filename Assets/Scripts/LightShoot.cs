@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Click to shoot a light projectile towards mouse
+// Click to shoot a light projectile from the object towards relative UP
 public class LightShoot : MonoBehaviour
 {
     public GameObject lightProjectile;  // projectile to shoot
@@ -14,14 +14,10 @@ public class LightShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector3 playerPos = transform.position;
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            Vector3 direction = (mousePos - playerPos).normalized;
+            Vector3 direction = transform.up;
 
-            GameObject newLight = Instantiate(lightProjectile, playerPos, Quaternion.identity);
+            GameObject newLight = Instantiate(lightProjectile, transform.position, Quaternion.identity);
             newLight.GetComponent<Rigidbody2D>().velocity = direction * lightSpeed;
-            Debug.Log(newLight.GetComponent<Rigidbody2D>().velocity.magnitude);
         }
     }
 }
