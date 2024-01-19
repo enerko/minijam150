@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 522218194}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +253,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1328425203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1444068214567754977, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
+  m_PrefabInstance: {fileID: 8599099049593036122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1328425204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328425203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236ae17621ac7fd48be1200de3f0fa1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 3
+  fallSpeed: 0.5
+  jumpForce: 5
 --- !u!1 &1564442001
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1444068214567754977, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2753421085311834866, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.15
@@ -530,7 +554,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1444068214567754977, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1328425204}
   m_SourcePrefab: {fileID: 100100000, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
