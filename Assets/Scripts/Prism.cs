@@ -7,8 +7,8 @@ public class Prism : MonoBehaviour
 {
     public float angle = 90;
 
-    private float cooldown = 0.8f;  // cooldown to prevent split light from triggering the prism
-    private float timer = 0.8f;
+    private float cooldown = 0.3f;  // cooldown to prevent split light from triggering the prism instantly
+    private float timer = 0.3f;
 
     void Update() {
         timer += Time.deltaTime;

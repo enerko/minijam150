@@ -8,9 +8,7 @@ public class Globals: MonoBehaviour
 {
     public static Globals instance;
     public static int currentEnemies = 0;  // gets initialized on load
-
-    private static Checkpoint lastCheckpoint;
-    private static int numLevels = 7;
+    private static int numLevels = 8;
     private static int currLevel = 1;
 
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
@@ -27,10 +25,6 @@ public class Globals: MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public static void UpdateLastCheckpoint(Checkpoint checkpoint)
-    {
-        lastCheckpoint = checkpoint;
-    }
 
     public static void CheckState(string tag)
     {
@@ -46,9 +40,10 @@ public class Globals: MonoBehaviour
             }
         }
 
+        // If you shoot yourself...
         if (tag == "Player")
         {
-            RestartCurrentLevel(2);
+            RestartCurrentLevel(1);
         }
     }
 
