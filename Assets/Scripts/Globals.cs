@@ -43,11 +43,15 @@ public class Globals: MonoBehaviour
                 instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, 2));
             }
         }
-
+        
         if (tag == "Player")
         {
-            instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, 2));
+            RestartCurrentLevel(2);
         }
+    }
+
+    public static void RestartCurrentLevel(float delay) {
+        instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, delay));
     }
 
     private static IEnumerator LoadSceneAsync(string scene, float delay)
