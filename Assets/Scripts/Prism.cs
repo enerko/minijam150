@@ -14,7 +14,7 @@ public class Prism : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    void OnTriggerStay2D(Collider2D other) {
+    void HandleLight(Collider2D other) {
         if (other.gameObject.tag != "Light" || timer < cooldown) {
             return;
         }
@@ -33,5 +33,13 @@ public class Prism : MonoBehaviour
         LightShoot.Shoot(light, light.transform.position, dirDown, currSpeed);
 
         Destroy(light);
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        HandleLight(other);
+    }
+
+    void OnTriggerStay2D(Collider2D other) {
+        HandleLight(other);
     }
 }

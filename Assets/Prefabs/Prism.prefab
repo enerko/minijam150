@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 930307508815942054}
   m_Layer: 0
   m_Name: Prism
-  m_TagString: Mirror
+  m_TagString: Prism
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

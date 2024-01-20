@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism
       objectReference: {fileID: 0}
+    - target: {fileID: 5574418355558736481, guid: 98a61fd6682543441aa25326d64dfe52, type: 3}
+      propertyPath: m_TagString
+      value: Prism
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
