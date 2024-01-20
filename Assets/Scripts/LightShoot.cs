@@ -26,8 +26,7 @@ public class LightShoot : MonoBehaviour
             timer = 0;
             Vector3 direction = transform.up;
 
-            GameObject newLight = Instantiate(lightProjectile, transform.position, Quaternion.identity);
-            newLight.GetComponent<Rigidbody2D>().velocity = direction * lightSpeed;
+            Shoot(lightProjectile, transform.position, direction, lightSpeed);
 
             if (ammoCounter) {
                 ammoCounter.SetValue(ammoCounter.GetValue() - 1);
@@ -35,5 +34,10 @@ public class LightShoot : MonoBehaviour
         }
 
         timer += Time.deltaTime;
+    }
+
+    public static void Shoot(GameObject prefab, Vector3 origin, Vector3 direction, float speed) {
+        GameObject newLight = Instantiate(prefab, origin, Quaternion.identity);
+        newLight.GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 }
