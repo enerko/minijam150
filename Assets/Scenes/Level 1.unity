@@ -693,6 +693,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_text
+      value: Move your mouse to aim, and click to shoot light. Vampires hate light!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_fontSize
       value: 0.5
       objectReference: {fileID: 0}
