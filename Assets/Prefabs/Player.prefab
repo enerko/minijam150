@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9159040124324560855}
   - component: {fileID: 6057289278924904220}
   - component: {fileID: 9120412316591793412}
+  - component: {fileID: 6720929026859015903}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -173,6 +174,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Light
+--- !u!114 &6720929026859015903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444068214567754977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc47f1497a98e4fb98c99260f47d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2976560980038759716
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,3 +301,4 @@ MonoBehaviour:
   lightProjectile: {fileID: 8234875901813114982, guid: 07ea00d4dd0c723489ce052b05f33ff5, type: 3}
   cooldown: 1
   lightSpeed: 30
+  ammoCounter: {fileID: 0}
