@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6720929026859015903}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {fileID: 2753421085311834866}
   distance: 1
+  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  c2: {r: 1, g: 0, b: 0, a: 1}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &2147965294758544121
 MonoBehaviour:
   m_ObjectHideFlags: 0
