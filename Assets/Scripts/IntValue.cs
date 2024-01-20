@@ -9,7 +9,7 @@ public class IntValue : MonoBehaviour
     public UnityEvent onChange;
     [SerializeField] private int value;
     
-    public int GetValue(int n) {
+    public int GetValue() {
         return value;
     }
 
