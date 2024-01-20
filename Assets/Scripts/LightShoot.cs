@@ -15,7 +15,7 @@ public class LightShoot : MonoBehaviour
 
     void Start() {
         timer = cooldown;
-        ammoCounter = GameObject.Find("/AmmoLimit").GetComponent<IntValue>();
+        ammoCounter = GameObject.Find("/AmmoLimit")?.GetComponent<IntValue>();
     }
 
     // Update is called once per frame
