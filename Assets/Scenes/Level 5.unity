@@ -2789,14 +2789,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1444068214567754977, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2147965294758544121, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
-      propertyPath: cooldown
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2753421085311834866, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2836,10 +2828,6 @@ PrefabInstance:
     - target: {fileID: 2753421085311834866, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7076566969668075136, guid: ebc33a2f64e602c4f9d32b73f663b475, type: 3}
-      propertyPath: layersToIgnore.m_Bits
-      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
