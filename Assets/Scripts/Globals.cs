@@ -10,7 +10,7 @@ public class Globals: MonoBehaviour
     public static int currentEnemies = 0;  // gets initialized on load
 
     private static Checkpoint lastCheckpoint;
-    private static int numLevels = 5;
+    private static int numLevels = 6;
     private static int currLevel = 1;
 
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
