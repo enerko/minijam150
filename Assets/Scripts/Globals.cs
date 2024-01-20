@@ -10,8 +10,8 @@ public class Globals: MonoBehaviour
     public static int currentEnemies = 0;  // gets initialized on load
 
     private static Checkpoint lastCheckpoint;
-    private static List<string> levels = new List<string> { "Level 1", "Level 2", "Level 3" };
-    private static int currLevel = 0;
+    private static int numLevels = 4;
+    private static int currLevel = 1;
 
     private void Awake()
     {
@@ -38,14 +38,15 @@ public class Globals: MonoBehaviour
             currentEnemies--;
 
             if (currentEnemies == 0) {
-                currLevel = (currLevel + 1) % levels.Count;
-                instance.StartCoroutine(LoadSceneAsync(levels[currLevel], 2));
+                // currLevel should go from 1 to numLevels
+                currLevel = currLevel % numLevels + 1;
+                instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, 2));
             }
         }
 
         if (tag == "Player")
         {
-            instance.StartCoroutine(LoadSceneAsync(levels[currLevel], 2));
+            instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, 2));
         }
     }
 
