@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 using UnityEngine.Rendering;
+using System;
 
 // For an object that orbits another object, aimed towards mouse pos
 public class MouseControlledOrbiter : MonoBehaviour
@@ -56,6 +57,49 @@ public class MouseControlledOrbiter : MonoBehaviour
         if (hit.collider)
         {
             lineRenderer.SetPosition(1, hit.point);
+
+            if (hit.collider.gameObject.tag == "Mirror")
+            {
+                lineRenderer.positionCount = 3;
+                Vector3 normal = hit.normal;
+                double normAngle = AngleBetweenVectors(Vector2.up, normal);
+                double dirAngle = AngleBetweenVectors(Vector2.up, direction);
+                double between = AngleBetweenVectors(normal, direction);
+
+
+                Vector2 reflected = RotateCounterClockwise(between, normal);
+
+
+                if (normAngle < dirAngle )
+                {
+                    reflected = RotateClockwise(between, normal);
+                }
+
+                lineRenderer.SetPosition(2, hit.point + 5 * reflected);
+            }
         }
+            
+
+        
+    }
+
+    double AngleBetweenVectors(Vector2 vec1, Vector2 vec2)
+    {
+        // this is not signed, causing a bug 
+        float dot = vec1.x * vec2.x + vec1.y * vec2.y;
+        double rad = Math.Acos(dot);
+        return Math.PI - rad;
+    }
+
+    Vector2 RotateCounterClockwise(double angle, Vector2 vec)
+    {
+        Vector2 rotated = new Vector2((float)(Math.Cos(angle) * vec.x - Math.Sin(angle) * vec.y), (float)(Math.Sin(angle)*vec.x + Math.Cos(angle)*vec.y));
+        return rotated;
+    }
+
+    Vector2 RotateClockwise(double angle, Vector2 vec)
+    {
+        Vector2 rotated = new Vector2((float)(Math.Cos(angle) * vec.x + Math.Sin(angle) * vec.y), (float)(-Math.Sin(angle) * vec.x + Math.Cos(angle) * vec.y));
+        return rotated;
     }
 }
