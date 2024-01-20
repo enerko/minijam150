@@ -14,7 +14,7 @@ public class Prism : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         if (other.gameObject.tag != "Light" || timer < cooldown) {
             return;
         }
