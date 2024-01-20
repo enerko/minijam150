@@ -62,20 +62,17 @@ public class MouseControlledOrbiter : MonoBehaviour
             {
                 lineRenderer.positionCount = 3;
                 Vector3 normal = hit.normal;
-                double normAngle = AngleBetweenVectors(Vector2.up, normal);
-                double dirAngle = AngleBetweenVectors(Vector2.up, direction);
                 double between = AngleBetweenVectors(normal, direction);
-
 
                 Vector2 reflected = RotateCounterClockwise(between, normal);
 
-
-                if (normAngle < dirAngle )
+                Debug.Log((Vector2.SignedAngle( normal, Vector2.up), Vector2.SignedAngle(Vector2.up, direction)));
+                if ((Vector2.SignedAngle(normal, direction) < 0))
                 {
                     reflected = RotateClockwise(between, normal);
                 }
 
-                lineRenderer.SetPosition(2, hit.point + 5 * reflected);
+                lineRenderer.SetPosition(2, hit.point + 1 * reflected);
             }
         }
             
