@@ -10,7 +10,7 @@ public class Globals: MonoBehaviour
     public static int currentEnemies = 0;  // gets initialized on load
 
     private static Checkpoint lastCheckpoint;
-    private static List<string> levels = new List<string> { "Level 1", "Level 2" };
+    private static List<string> levels = new List<string> { "Level 1", "Level 2", "Level 3" };
     private static int currLevel = 0;
 
     private void Awake()
