@@ -22,15 +22,15 @@ public class MouseControlledOrbiter : MonoBehaviour
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.widthMultiplier = 0.2f;
+        lineRenderer.widthMultiplier = 0.1f;
         lineRenderer.positionCount = 2;
 
         // A simple 2 color gradient with a fixed alpha of 1.0f.
-        float alpha = 1.0f;
+        float alpha = 0.5f;
         Gradient gradient = new Gradient();
         gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
-            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c1, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
         );
         lineRenderer.colorGradient = gradient;
     }
@@ -66,7 +66,6 @@ public class MouseControlledOrbiter : MonoBehaviour
 
                 Vector2 reflected = RotateCounterClockwise(between, normal);
 
-                Debug.Log((Vector2.SignedAngle( normal, Vector2.up), Vector2.SignedAngle(Vector2.up, direction)));
                 if ((Vector2.SignedAngle(normal, direction) < 0))
                 {
                     reflected = RotateClockwise(between, normal);
