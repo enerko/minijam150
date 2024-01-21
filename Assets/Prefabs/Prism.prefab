@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 90
+  sound: {fileID: 8300000, guid: b34221589506caf4db1ab4d3998e0872, type: 3}
