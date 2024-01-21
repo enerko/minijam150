@@ -12,6 +12,7 @@ public class LightShoot : MonoBehaviour
     public IntValue ammoCounter;
     public float radius;  // radius of area to check for overlap
     public AudioClip shootSound;
+    public ParticleSystem particles;
 
     private float timer = 0;
 
@@ -37,6 +38,7 @@ public class LightShoot : MonoBehaviour
             Shoot(lightProjectile, transform.position, direction, lightSpeed);
 
             Globals.PlayClip(shootSound);  // separate because prism's don't use this sound
+            Instantiate(particles, transform.position, Quaternion.identity);
 
             if (ammoCounter) {
                 ammoCounter.SetValue(ammoCounter.GetValue() - 1);

@@ -417,3 +417,4 @@ MonoBehaviour:
   ammoCounter: {fileID: 0}
   radius: 0.15
   shootSound: {fileID: 8300000, guid: 8adf4802722499544975a0b56a285aa1, type: 3}
+  particles: {fileID: 5626976694076527583, guid: fd87835c5e302f84ca888da74b3ad851, type: 3}

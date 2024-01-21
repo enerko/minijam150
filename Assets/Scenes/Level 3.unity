@@ -1928,6 +1928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 564163872233197688, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1745635047804736930, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_Name
       value: Hint
@@ -1994,11 +1998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3289155295029394914, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0437
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3289155295029394914, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0437
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3289155295029394914, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2054,7 +2058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8757076691250289021, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.28
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
