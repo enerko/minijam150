@@ -385,6 +385,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Press R to restart if you run out of ammo
       objectReference: {fileID: 0}
+    - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284069818
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
