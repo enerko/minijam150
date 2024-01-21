@@ -14,15 +14,14 @@ public class MouseControlledOrbiter : MonoBehaviour
     public Color c2 = Color.red;
     private LineRenderer lineRenderer;
     private Vector3 direction;
-    private Vector3 playerPos;
     private float maxDist = 30;
     public LayerMask layersToIgnore;
+    private GameObject prismPath;
+    private List<LineRenderer> lines = new List<LineRenderer>();
 
     private void Start()
     {
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.widthMultiplier = 0.1f;
+        lineRenderer = MakeLineRenderer(gameObject);
         lineRenderer.positionCount = 2;
 
         // A simple 2 color gradient with a fixed alpha of 1.0f.
@@ -33,6 +32,14 @@ public class MouseControlledOrbiter : MonoBehaviour
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
         );
         lineRenderer.colorGradient = gradient;
+    }
+
+    LineRenderer MakeLineRenderer(GameObject gameObject)
+    {
+        LineRenderer newLR = gameObject.AddComponent<LineRenderer>();
+        newLR.material = new Material(Shader.Find("Sprites/Default"));
+        newLR.widthMultiplier = 0.1f;
+        return newLR;
     }
     // Update is called once per frame
     void Update()
@@ -59,12 +66,21 @@ public class MouseControlledOrbiter : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Mirror")
             {
+                if (lines.Count != 0)
+                {
+                    Destroy(lines[0].gameObject);
+                    Destroy(lines[1].gameObject);
+                    lines.Clear();
+                }
+
                 lineRenderer.positionCount = 3;
+
+                // Calculate angle between vectors, then apply a transformation
                 Vector3 normal = hit.normal;
                 double between = AngleBetweenVectors(normal, direction);
-
                 Vector2 reflected = RotateCounterClockwise(between, normal);
 
+                // If normal comes after direction in the circle then clockwise rotation, otherwise counterclockwise
                 if ((Vector2.SignedAngle(normal, direction) < 0))
                 {
                     reflected = RotateClockwise(between, normal);
@@ -72,10 +88,52 @@ public class MouseControlledOrbiter : MonoBehaviour
 
                 lineRenderer.SetPosition(2, hit.point + 1 * reflected);
             }
-            else
+            else if (hit.collider.gameObject.tag == "Prism")
             {
                 lineRenderer.positionCount = 2;
+                lineRenderer.SetPosition(1, hit.point);
+
+                if (lines.Count == 0)
+                {
+                    GameObject line1 = new GameObject("Line1");
+                    LineRenderer prismRendererL = MakeLineRenderer(line1);
+                    prismRendererL.positionCount = 2;
+
+                    GameObject line2 = new GameObject("Line2");
+                    LineRenderer prismRendererR = MakeLineRenderer(line2);
+                    prismRendererR.positionCount = 2;
+
+                    lines.Add(prismRendererL);
+                    lines.Add(prismRendererR);
+                }
+                float angle = (float)(2 /Math.PI);
+                Vector2 dirUp = RotateCounterClockwise(angle, direction);
+                Vector2 dirDown = RotateClockwise(angle, direction);
+
+                List<Vector2> positions = new List<Vector2> { dirUp, dirDown };
+
+                for (int i = 0; i < lines.Count; i++)
+                {
+                    lines[i].SetPosition(0, hit.point);
+                    lines[i].SetPosition(1, positions[i]);
+
+                }
+
             }
+            else
+
+            {
+                lineRenderer.positionCount = 2;
+                lineRenderer.SetPosition(1, hit.point);
+                if (lines.Count != 0)
+                {
+                    Destroy(lines[0].gameObject);
+                    Destroy(lines[1].gameObject);
+                    lines.Clear();
+                }
+
+            }
+
         }
             
 
