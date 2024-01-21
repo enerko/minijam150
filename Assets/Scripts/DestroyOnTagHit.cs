@@ -11,13 +11,13 @@ public class DestroyOnTagHit : MonoBehaviour
     {
         if (collision.gameObject.tag == target)
         {
-            // Disable the collider
-            BoxCollider2D collider = GetComponent<BoxCollider2D>();
-            collider.enabled = false;
-
             if (sound) {
                 Globals.PlayClip(sound);
             }
+            
+            // Disable the collider
+            BoxCollider2D collider = GetComponent<BoxCollider2D>();
+            collider.enabled = false;
 
             Globals.CheckState(tag);
             Animator animator = GetComponent<Animator>();

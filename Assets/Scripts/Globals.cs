@@ -73,6 +73,6 @@ public class Globals: MonoBehaviour
 
     // Play audio clip
     public static void PlayClip(AudioClip clip) {
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(clip);
     }
 }

@@ -176,3 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Mirror
+  sound: {fileID: 8300000, guid: 22f4c9a3743166c47b1f8b1f2ff1b872, type: 3}
