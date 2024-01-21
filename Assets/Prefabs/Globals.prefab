@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163dfc0957aebe4396954ca1048b944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winSound: {fileID: 8300000, guid: 94d1d80d0e182234eb544ef426bc3779, type: 3}
+  winSound: {fileID: 8300000, guid: 4fc9058e120cbb2429b99ef3921bd54a, type: 3}
 --- !u!82 &7312512026496936826
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56,9 +56,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 68ffb99605120be45a6d80aec9c4ee43, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1e0b7c9024d1c29478bf6fa1a9c3ea71, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.16
+  m_Volume: 0.11
   m_Pitch: 1
   Loop: 1
   Mute: 0

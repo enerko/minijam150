@@ -290,10 +290,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Globals
       objectReference: {fileID: 0}
-    - target: {fileID: 4296721828760695642, guid: 8e59db8b270120d4aa50f8570e719f32, type: 3}
-      propertyPath: winSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 4fc9058e120cbb2429b99ef3921bd54a, type: 3}
     - target: {fileID: 5549764084761260320, guid: 8e59db8b270120d4aa50f8570e719f32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1505276
@@ -334,10 +330,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7312512026496936826, guid: 8e59db8b270120d4aa50f8570e719f32, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e0b7c9024d1c29478bf6fa1a9c3ea71, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
