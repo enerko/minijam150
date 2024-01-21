@@ -6,6 +6,7 @@ using UnityEngine;
 public class Prism : MonoBehaviour
 {
     public float angle = 90;
+    public AudioClip sound;
 
     private float cooldown = 0.3f;  // cooldown to prevent split light from triggering the prism instantly
     private float timer = 0.3f;
@@ -20,6 +21,7 @@ public class Prism : MonoBehaviour
         }
 
         timer = 0;
+        Globals.PlayClip(sound);
 
         // Must be tagged Light to split
         GameObject light = other.gameObject;
