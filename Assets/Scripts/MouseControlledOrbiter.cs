@@ -15,7 +15,7 @@ public class MouseControlledOrbiter : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3 direction;
     private Vector3 playerPos;
-    private float maxDist = 20;
+    private float maxDist = 30;
     public LayerMask layersToIgnore;
 
     private void Start()
@@ -37,7 +37,6 @@ public class MouseControlledOrbiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         direction = (mousePos - center.position).normalized;
@@ -51,8 +50,8 @@ public class MouseControlledOrbiter : MonoBehaviour
     void DrawLine()
     {
         // Draw a line from player position to first collision point
-        lineRenderer.SetPosition(0, playerPos);
-        RaycastHit2D hit = Physics2D.Raycast(playerPos, direction, maxDist, ~layersToIgnore);
+        lineRenderer.SetPosition(0, transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDist, ~layersToIgnore);
 
         if (hit.collider)
         {
@@ -72,6 +71,10 @@ public class MouseControlledOrbiter : MonoBehaviour
                 }
 
                 lineRenderer.SetPosition(2, hit.point + 1 * reflected);
+            }
+            else
+            {
+                lineRenderer.positionCount = 2;
             }
         }
             
