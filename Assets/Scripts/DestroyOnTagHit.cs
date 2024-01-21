@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyOnTagHit : MonoBehaviour
 {
     public string target;
+    public AudioClip sound;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +14,10 @@ public class DestroyOnTagHit : MonoBehaviour
             // Disable the collider
             BoxCollider2D collider = GetComponent<BoxCollider2D>();
             collider.enabled = false;
+
+            if (sound) {
+                Globals.PlayClip(sound);
+            }
 
             Globals.CheckState(tag);
             Animator animator = GetComponent<Animator>();

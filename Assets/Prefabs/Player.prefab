@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Light
+  sound: {fileID: 8300000, guid: 40718bd0f41734d47960344af195deac, type: 3}
 --- !u!114 &6720929026859015903
 MonoBehaviour:
   m_ObjectHideFlags: 0
