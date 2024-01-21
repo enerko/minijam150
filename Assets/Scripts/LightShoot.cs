@@ -11,6 +11,7 @@ public class LightShoot : MonoBehaviour
     public float lightSpeed = 50;  // speed of projectile
     public IntValue ammoCounter;
     public float radius;  // radius of area to check for overlap
+    public AudioClip shootSound;
 
     private float timer = 0;
 
@@ -34,6 +35,8 @@ public class LightShoot : MonoBehaviour
             Vector3 direction = transform.up;
 
             Shoot(lightProjectile, transform.position, direction, lightSpeed);
+
+            Globals.PlayClip(shootSound);  // separate because prism's don't use this sound
 
             if (ammoCounter) {
                 ammoCounter.SetValue(ammoCounter.GetValue() - 1);

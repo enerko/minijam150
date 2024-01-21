@@ -70,4 +70,9 @@ public class Globals: MonoBehaviour
         currentEnemies = 0;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
+
+    // Play audio clip
+    public static void PlayClip(AudioClip clip) {
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+    }
 }
