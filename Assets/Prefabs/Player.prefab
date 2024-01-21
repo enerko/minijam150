@@ -303,8 +303,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8773815480887331745}
   - component: {fileID: 7565553061063450818}
-  - component: {fileID: 7076566969668075136}
   - component: {fileID: 2147965294758544121}
+  - component: {fileID: 3603986283462867221}
   m_Layer: 3
   m_Name: Barrel
   m_TagString: Untagged
@@ -380,25 +380,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7076566969668075136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2976560980038759716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acc96c3d33325f540a096a5c89939148, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {fileID: 2753421085311834866}
-  distance: 1
-  c1: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  c2: {r: 1, g: 0, b: 0, a: 1}
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 72
 --- !u!114 &2147965294758544121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,3 +399,21 @@ MonoBehaviour:
   radius: 0.15
   shootSound: {fileID: 8300000, guid: 8adf4802722499544975a0b56a285aa1, type: 3}
   particles: {fileID: 5626976694076527583, guid: fd87835c5e302f84ca888da74b3ad851, type: 3}
+--- !u!114 &3603986283462867221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976560980038759716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed1273bcf3b3854caf91d2cf5d67f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {fileID: 2753421085311834866}
+  distance: 1
+  lightObject: {fileID: 8234875901813114982, guid: 07ea00d4dd0c723489ce052b05f33ff5, type: 3}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 72
