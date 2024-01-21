@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163dfc0957aebe4396954ca1048b944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winSound: {fileID: 8300000, guid: 05dff8eb89652e840beb84efe35f90bc, type: 3}

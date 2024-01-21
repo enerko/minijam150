@@ -13,6 +13,8 @@ public class Globals: MonoBehaviour
 
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
 
+    public AudioClip winSound;
+
     private void Awake()
     {
         if (instance == null)
@@ -36,6 +38,7 @@ public class Globals: MonoBehaviour
             if (currentEnemies == 0) {
                 // currLevel should go from 1 to numLevels
                 currLevel = currLevel % numLevels + 1;
+                PlayClip(instance.winSound);
                 RestartCurrentLevel(2);
             }
         }
