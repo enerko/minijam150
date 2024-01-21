@@ -8,7 +8,7 @@ public class Globals: MonoBehaviour
 {
     public static Globals instance;
     public static int currentEnemies = 0;  // gets initialized on load
-    private static int numLevels = 9;
+    private static int numLevels = 11;
     private static int currLevel = 1;
 
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
