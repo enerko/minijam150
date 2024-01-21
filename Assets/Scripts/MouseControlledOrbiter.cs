@@ -16,8 +16,8 @@ public class MouseControlledOrbiter : MonoBehaviour
     private Vector3 direction;
     private float maxDist = 30;
     public LayerMask layersToIgnore;
-    private GameObject prismPath;
     private List<LineRenderer> lines = new List<LineRenderer>();
+    private LightShoot lightShoot;
 
     private void Start()
     {
@@ -25,6 +25,7 @@ public class MouseControlledOrbiter : MonoBehaviour
         lineRenderer.positionCount = 2;
 
         SetDefaultColor(lineRenderer);
+        lightShoot = GetComponent<LightShoot>();
     }
 
     LineRenderer MakeLineRenderer(GameObject gameObject)
@@ -43,12 +44,23 @@ public class MouseControlledOrbiter : MonoBehaviour
 
         transform.position = center.position + direction * distance;
         transform.up = direction;
-        DrawLine();
-
+        if (lightShoot.GetCooldown() < 0)
+        {
+            EraseLines();
+        }
+        else
+        {
+            DrawLines();
+        }
     }
 
-    void DrawLine()
+    void DrawLines()
     {
+        if (!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+        }
+
         // Draw a line from player position to first collision point
         lineRenderer.SetPosition(0, transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDist, ~layersToIgnore);
@@ -112,13 +124,10 @@ public class MouseControlledOrbiter : MonoBehaviour
 
             }
             else
-
             {
                 ResetLineRenderer();
             }
-
         }
-            
     }
 
     private void ResetLineRenderer()
@@ -131,6 +140,12 @@ public class MouseControlledOrbiter : MonoBehaviour
             lines.Clear();
         }
         SetDefaultColor(lineRenderer);
+    }
+
+    private void EraseLines()
+    {
+        ResetLineRenderer();
+        lineRenderer.enabled = false;
     }
 
 

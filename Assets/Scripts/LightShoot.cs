@@ -52,4 +52,9 @@ public class LightShoot : MonoBehaviour
         GameObject newLight = Instantiate(prefab, origin, Quaternion.identity);
         newLight.GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
+
+    public float GetCooldown()
+    {
+        return timer - cooldown;
+    }
 }
