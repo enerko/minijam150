@@ -24,14 +24,7 @@ public class MouseControlledOrbiter : MonoBehaviour
         lineRenderer = MakeLineRenderer(gameObject);
         lineRenderer.positionCount = 2;
 
-        // A simple 2 color gradient with a fixed alpha of 1.0f.
-        float alpha = 0.5f;
-        Gradient gradient = new Gradient();
-        gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c1, 1.0f) },
-            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
-        );
-        lineRenderer.colorGradient = gradient;
+        SetDefaultColor(lineRenderer);
     }
 
     LineRenderer MakeLineRenderer(GameObject gameObject)
@@ -66,12 +59,7 @@ public class MouseControlledOrbiter : MonoBehaviour
 
             if (hit.collider.gameObject.tag == "Mirror")
             {
-                if (lines.Count != 0)
-                {
-                    Destroy(lines[0].gameObject);
-                    Destroy(lines[1].gameObject);
-                    lines.Clear();
-                }
+                ResetLineRenderer();
 
                 lineRenderer.positionCount = 3;
 
@@ -90,6 +78,8 @@ public class MouseControlledOrbiter : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Prism")
             {
+                // Split the path into two with the collision point as the origin 
+                ChangeColor(lineRenderer);
                 lineRenderer.positionCount = 2;
                 lineRenderer.SetPosition(1, hit.point);
 
@@ -106,38 +96,65 @@ public class MouseControlledOrbiter : MonoBehaviour
                     lines.Add(prismRendererL);
                     lines.Add(prismRendererR);
                 }
-                float angle = (float)(2 /Math.PI);
-                Vector2 dirUp = RotateCounterClockwise(angle, direction);
-                Vector2 dirDown = RotateClockwise(angle, direction);
+                float angle = 90;
+
+                Vector2 dirUp = Quaternion.AngleAxis(angle / 2, new Vector3(0, 0, 1)) * direction;
+                Vector2 dirDown = Quaternion.AngleAxis(-angle / 2, new Vector3(0, 0, 1)) * direction;
 
                 List<Vector2> positions = new List<Vector2> { dirUp, dirDown };
 
                 for (int i = 0; i < lines.Count; i++)
                 {
                     lines[i].SetPosition(0, hit.point);
-                    lines[i].SetPosition(1, positions[i]);
-
+                    lines[i].SetPosition(1, positions[i] + hit.point);
+                    SetDefaultColor(lines[i]);
                 }
 
             }
             else
 
             {
-                lineRenderer.positionCount = 2;
-                lineRenderer.SetPosition(1, hit.point);
-                if (lines.Count != 0)
-                {
-                    Destroy(lines[0].gameObject);
-                    Destroy(lines[1].gameObject);
-                    lines.Clear();
-                }
-
+                ResetLineRenderer();
             }
 
         }
             
+    }
 
-        
+    private void ResetLineRenderer()
+    {
+        lineRenderer.positionCount = 2;
+        if (lines.Count != 0)
+        {
+            Destroy(lines[0].gameObject);
+            Destroy(lines[1].gameObject);
+            lines.Clear();
+        }
+        SetDefaultColor(lineRenderer);
+    }
+
+
+    private void SetDefaultColor(LineRenderer lr)
+    {
+        // A simple 2 color gradient with a fixed alpha of 1.0f.
+        float alpha = 0.5f;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c1, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        lr.colorGradient = gradient;
+    }
+
+    private void ChangeColor(LineRenderer lr)
+    {
+        float alpha = 0.5f;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c1, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+        );
+        lr.colorGradient = gradient;
     }
 
     double AngleBetweenVectors(Vector2 vec1, Vector2 vec2)
