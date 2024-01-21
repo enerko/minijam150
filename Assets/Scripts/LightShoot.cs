@@ -10,6 +10,7 @@ public class LightShoot : MonoBehaviour
     public float cooldown = 1;
     public float lightSpeed = 50;  // speed of projectile
     public IntValue ammoCounter;
+    public float radius;  // radius of area to check for overlap
 
     private float timer = 0;
 
@@ -23,6 +24,12 @@ public class LightShoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && (timer >= cooldown) && (ammoCounter?.GetValue() > 0))
         {
+            // Do overlap check to make sure there's nothing in the way
+            Collider2D other = Physics2D.OverlapCircle(transform.position, radius);
+            if (other) {
+                return;
+            }
+
             timer = 0;
             Vector3 direction = transform.up;
 

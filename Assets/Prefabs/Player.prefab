@@ -414,3 +414,4 @@ MonoBehaviour:
   cooldown: 1
   lightSpeed: 30
   ammoCounter: {fileID: 0}
+  radius: 0.15
