@@ -7,6 +7,7 @@ public class Prism : MonoBehaviour
 {
     public float angle = 90;
     public AudioClip sound;
+    public ParticleSystem prismParticles;
 
     private float cooldown = 0.3f;  // cooldown to prevent split light from triggering the prism instantly
     private float timer = 0.3f;
@@ -25,6 +26,7 @@ public class Prism : MonoBehaviour
 
         // Must be tagged Light to split
         GameObject light = other.gameObject;
+        Instantiate(prismParticles, light.transform.position, Quaternion.identity);
         Vector3 velo = light.GetComponent<Rigidbody2D>().velocity;
         float currSpeed = velo.magnitude;
         Vector3 dir = velo.normalized;
