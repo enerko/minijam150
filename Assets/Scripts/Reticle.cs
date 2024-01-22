@@ -63,7 +63,7 @@ public class Reticle : MonoBehaviour
 
         // Draw a line from player position to first collision point
         lineRenderer.SetPosition(0, transform.position);
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, lightObject.transform.localScale.x, direction, maxDist, ~layersToIgnore);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, lightObject.transform.localScale.x / 2, direction, maxDist, ~layersToIgnore);
 
         if (hit.collider)
         {
