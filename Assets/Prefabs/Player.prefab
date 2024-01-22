@@ -418,3 +418,4 @@ MonoBehaviour:
   layersToIgnore:
     serializedVersion: 2
     m_Bits: 72
+  c1: {r: 0.990566, g: 0.91836506, b: 0.62299746, a: 1}

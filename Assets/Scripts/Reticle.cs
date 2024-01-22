@@ -12,7 +12,7 @@ public class Reticle : MonoBehaviour
     public float distance = 1;
     public GameObject lightObject; 
     public LayerMask layersToIgnore;
-    private Color c1 = Color.yellow;
+    public Color c1 = Color.yellow;
     private LineRenderer lineRenderer;
     private Vector3 direction;
     private float maxDist = 30;
@@ -152,7 +152,7 @@ public class Reticle : MonoBehaviour
     private void SetDefaultColor(LineRenderer lr)
     {
         // A simple 2 color gradient with a fixed alpha of 1.0f.
-        float alpha = 0.5f;
+        float alpha = 0.4f;
         Gradient gradient = new Gradient();
         gradient.SetKeys(
             new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c1, 1.0f) },
