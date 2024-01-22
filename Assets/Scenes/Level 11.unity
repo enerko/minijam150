@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Skippy has vanquished all vampires
+  m_text: 'Skippy has vanquished all the vampires
 
 '
   m_isRightToLeft: 0
