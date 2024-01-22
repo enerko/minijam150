@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightProjectile: {fileID: 8234875901813114982, guid: 07ea00d4dd0c723489ce052b05f33ff5, type: 3}
   cooldown: 1
-  lightSpeed: 30
+  lightSpeed: 25
   ammoCounter: {fileID: 0}
   radius: 0.15
   shootSound: {fileID: 8300000, guid: 8adf4802722499544975a0b56a285aa1, type: 3}
