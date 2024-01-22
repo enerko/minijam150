@@ -14,7 +14,6 @@ public class Globals: MonoBehaviour
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
 
     public AudioClip winSound;
-    public AudioClip reloadSound;
 
     private void Awake()
     {
@@ -78,6 +77,6 @@ public class Globals: MonoBehaviour
 
     // Play audio clip
     public static void PlayClip(AudioClip clip) {
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(clip);
+        instance.GetComponent<AudioSource>().PlayOneShot(clip);
     }
 }

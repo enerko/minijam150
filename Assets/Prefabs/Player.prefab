@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bc47f1497a98e4fb98c99260f47d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadSound: {fileID: 8300000, guid: 9519fbd683fa00545bbaf5bdf10a4ac5, type: 3}
 --- !u!95 &9216893070933465712
 Animator:
   serializedVersion: 5
