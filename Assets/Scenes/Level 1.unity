@@ -195,6 +195,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0703ab783d2ea364daa6e799c3a11d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &467525634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4000232602711347623, guid: 0ddce7df68c18de46b2e29956b3da544, type: 3}
+  m_PrefabInstance: {fileID: 8247107956895954082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &732652044
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,9 +405,17 @@ PrefabInstance:
       value: HUD
       objectReference: {fileID: 0}
     - target: {fileID: 4654700113005966426, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: hint
+      value: 
+      objectReference: {fileID: 467525634}
+    - target: {fileID: 4654700113005966426, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
       propertyPath: ammoCount
       value: 
       objectReference: {fileID: 331221051}
+    - target: {fileID: 4654700113005966426, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: formatString
+      value: 'Spells: {0}'
+      objectReference: {fileID: 0}
     - target: {fileID: 5598746767863920591, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -476,6 +495,26 @@ PrefabInstance:
     - target: {fileID: 5598746767863920591, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365306129169725134, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 255.2201
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365306129169725134, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 48.301
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365306129169725134, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.699005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216882278855021356, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: m_text
+      value: 'Spells: 00'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216882278855021356, guid: a97ba393037bff3409e01ec49ca14815, type: 3}
+      propertyPath: m_margin.z
+      value: -0.10998535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
