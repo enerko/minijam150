@@ -14,6 +14,7 @@ public class Globals: MonoBehaviour
     private static bool isLoadingScene = false;  // sometimes it loads after a delay, this corresponds to that
 
     public AudioClip winSound;
+    public AudioClip reloadSound;
 
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class Globals: MonoBehaviour
     }
 
     public static void RestartCurrentLevel(float delay) {
+
         instance.StartCoroutine(LoadSceneAsync("Level " + currLevel, delay));
     }
 

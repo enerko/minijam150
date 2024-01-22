@@ -137,8 +137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 10}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 22.03003, y: 16.26}
+  m_SizeDelta: {x: 255.2201, y: 48.301}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8693289930993371672
 CanvasRenderer:
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ammo: 00'
+  m_text: 'Spells: 00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57fdb7ad790de5044a8d5ddbf8917d38, type: 2}
   m_sharedMaterial: {fileID: 3579107343418118028, guid: 57fdb7ad790de5044a8d5ddbf8917d38, type: 2}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -11.641701, z: -14.552124, w: 0}
+  m_margin: {x: 0, y: -11.641701, z: -0.10998535, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -250,4 +250,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: {fileID: 0}
-  formatString: 'Ammo: {0}'
+  formatString: Spells:{0}
